@@ -70,6 +70,7 @@ const BlogListItem = ({ item, ...props }) => {
       )}
 
       <p>{item.content}</p>
+      <a href={`/edit/${item.id}`}>View</a>
     </div>
   );
 };

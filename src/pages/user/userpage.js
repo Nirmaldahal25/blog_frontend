@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import AuthContext from "../../context/auth/authcontext";
 const UserPage = (props) => {
   const { user, setUser } = useContext(AuthContext);
@@ -6,23 +6,23 @@ const UserPage = (props) => {
   return (
     <div className="container">
       <table>
-        <th>
-          <th>Key</th>
-          <th>Value</th>
-        </th>
-        {Object.keys(user).map((key, index) => {
-          return (
-            <tr key={index}>
-              <td>{key}</td>
-              <td>{user[key]}</td>
-            </tr>
-          );
-        })}
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          {Object.keys(user).map((key, index) => {
+            return (
+              <tr key={index}>
+                <td>{key}</td>
+                <td>{user[key]}</td>
+              </tr>
+            );
+          })}
+        </tbody>
       </table>
-
-      <section className="blogs">
-        <h2>My personal Blogs</h2>
-      </section>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import AuthContext from "../context/auth/authcontext";
 import BlogListPage from "../pages/blog/blogpage";
 import UserPage from "../pages/user/userpage";
 import LoginPage from "../pages/login/loginpage";
-import LogOutPage from "../pages/logoutpage.js/logout";
+import LogOutPage from "../pages/logoutpage/logout";
 import BlogCreate from "../pages/blog/blogcreate";
 
 const ProtectedRoute = ({ children }) => {
@@ -56,7 +56,17 @@ const BlogRoutes = (props) => {
           }
         ></Route>
         <Route
-          path="/create"
+          exact={true}
+          path="/edit/:id"
+          element={
+            <ProtectedRoute>
+              <BlogCreate />
+            </ProtectedRoute>
+          }
+        ></Route>
+
+        <Route
+          path="/edit"
           element={
             <ProtectedRoute>
               <BlogCreate />
