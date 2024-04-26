@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import AuthContext from "../../context/auth/authcontext";
 const UserPage = (props) => {
   const { user, setUser } = useContext(AuthContext);
+
   return (
     <div className="container">
       <table>
